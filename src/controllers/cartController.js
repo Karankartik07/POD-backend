@@ -90,29 +90,26 @@ export const addToCart = async (req, res, next) => {
   }
 };
 
-// Remove / Decrement item in Cart
+// Remove item from Cart (Removes item completely)
 export const removeFromCart = async (req, res, next) => {
   try {
-    const { productId, variant, removeAll = false } = req.body;
+    const { productId, variant, removeAll = true } = req.body;
 
     const cart = await Cart.findOne({ user: req.user._id });
     if (!cart) {
       return res.status(404).json({ success: false, message: 'Cart not found' });
     }
 
-    const itemIndex = cart.items.findIndex(item => 
-      item.product.toString() === productId && 
-      item.variant === variant
-    );
-
-    if (itemIndex > -1) {
-      if (removeAll || cart.items[itemIndex].quantity <= 1) {
-        cart.items.splice(itemIndex, 1);
-      } else {
-        cart.items[itemIndex].quantity -= 1;
+    cart.items = cart.items.filter(item => {
+      const matchProduct = item.product.toString() === productId;
+      if (!matchProduct) return true;
+      if (variant) {
+        return item.variant !== variant;
       }
-      await cart.save();
-    }
+      return false;
+    });
+
+    await cart.save();
 
     const updatedCart = await Cart.findOne({ user: req.user._id }).populate('items.product');
     res.status(200).json({ success: true, data: updatedCart });

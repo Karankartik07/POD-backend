@@ -13,10 +13,20 @@ export const getProducts = async (req, res, next) => {
       minPrice, 
       maxPrice, 
       sort, 
+      size,
       isActive 
     } = req.query;
 
     const query = {};
+
+    if (size) {
+      query.$or = query.$or || [];
+      query.$or.push(
+        { "sizes.size": { $regex: new RegExp("^" + size + "$", "i") } },
+        { "variants.size": { $regex: new RegExp("^" + size + "$", "i") } },
+        { attributes: { $elemMatch: { key: { $regex: /^size$/i }, value: { $regex: new RegExp("^" + size + "$", "i") } } } }
+      );
+    }
 
     // Apply filters
     if (isActive !== undefined) {

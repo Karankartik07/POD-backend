@@ -12,13 +12,10 @@ export const registerUser = async (req, res, next) => {
   try {
     const { name, email, password, mobile } = req.body;
 
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
-    if (!passwordRegex.test(password)) {
+    if (!password || password.length < 6) {
       return res.status(400).json({
         success: false,
-        message:
-          "Password must be at least 8 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.",
+        message: "Password must be at least 6 characters long.",
       });
     }
 
@@ -73,6 +70,8 @@ export const registerUser = async (req, res, next) => {
         _id: user._id,
         name: user.name,
         email: user.email,
+        mobile: user.mobile || "",
+        avatar: user.avatar || "",
         role: user.role,
         token: generateToken(user._id),
       },
@@ -108,24 +107,29 @@ export const loginUser = async (req, res, next) => {
         .json({ success: false, message: "Your account has been suspended" });
     }
 
-    if (user.role === "admin" && !user.emailVerified) {
+    if (!user.emailVerified) {
       const otp = generateOTP();
       user.otp = otp;
       user.otpExpires = Date.now() + 24 * 60 * 60 * 1000;
       await user.save();
 
-      const emailHtml = getWelcomeEmailTemplate(user.name || "Admin", otp);
+      const emailHtml = getWelcomeEmailTemplate(user.name || "User", otp);
       await sendEmail({
         to: user.email,
-        subject: "Verify Your Vardaan Admin Dashboard Access",
-        text: `Please verify your email to continue using the Vardaan admin dashboard. Your verification code is: ${otp}`,
+        subject: "Verify Your Vardaan Account Email",
+        text: `Please verify your email to continue. Your verification code is: ${otp}`,
         html: emailHtml,
       });
+
+      console.log(`\n=================== [UNVERIFIED LOGIN OTP LOG] ===================`);
+      console.log(`EMAIL: ${user.email}`);
+      console.log(`OTP CODE: ${otp}`);
+      console.log(`=================================================================\n`);
 
       return res.status(403).json({
         success: false,
         message:
-          "Please verify your email before signing in. A new verification code has been sent.",
+          "Please verify your email before signing in. A verification code has been sent to your email.",
         requiresVerification: true,
         email: user.email,
       });
@@ -137,6 +141,8 @@ export const loginUser = async (req, res, next) => {
         _id: user._id,
         name: user.name,
         email: user.email,
+        mobile: user.mobile || "",
+        avatar: user.avatar || "",
         role: user.role,
         token: generateToken(user._id),
       },
@@ -205,6 +211,8 @@ export const verifyOTP = async (req, res, next) => {
         _id: user._id,
         name: user.name,
         email: user.email,
+        mobile: user.mobile || "",
+        avatar: user.avatar || "",
         role: user.role,
         token: generateToken(user._id),
       },
@@ -307,13 +315,10 @@ export const resetPassword = async (req, res, next) => {
         .json({ success: false, message: "Invalid or expired recovery code" });
     }
 
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
-    if (!passwordRegex.test(newPassword)) {
+    if (!newPassword || newPassword.length < 6) {
       return res.status(400).json({
         success: false,
-        message:
-          "Password must be at least 8 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.",
+        message: "Password must be at least 6 characters long.",
       });
     }
 
@@ -349,6 +354,7 @@ export const updateUserProfile = async (req, res, next) => {
     if (req.body.name !== undefined) user.name = req.body.name;
     if (req.body.email !== undefined) user.email = req.body.email;
     if (req.body.mobile !== undefined) user.mobile = req.body.mobile;
+    if (req.body.avatar !== undefined) user.avatar = req.body.avatar;
     if (req.body.addresses !== undefined) user.addresses = req.body.addresses;
 
     await user.save();
@@ -359,6 +365,7 @@ export const updateUserProfile = async (req, res, next) => {
         name: user.name,
         email: user.email,
         mobile: user.mobile,
+        avatar: user.avatar || "",
         role: user.role,
         addresses: user.addresses,
       },
@@ -430,6 +437,8 @@ export const verifyEmail = async (req, res, next) => {
         _id: user._id,
         name: user.name,
         email: user.email,
+        mobile: user.mobile || "",
+        avatar: user.avatar || "",
         role: user.role,
         token: generateToken(user._id),
       },
@@ -567,6 +576,8 @@ export const verifyMobileOTP = async (req, res, next) => {
         _id: user._id,
         name: user.name,
         email: user.email,
+        mobile: user.mobile || "",
+        avatar: user.avatar || "",
         role: user.role,
         token: generateToken(user._id),
       },
@@ -588,13 +599,10 @@ export const changePassword = async (req, res, next) => {
         .json({ success: false, message: "Invalid current password" });
     }
 
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
-    if (!passwordRegex.test(newPassword)) {
+    if (!newPassword || newPassword.length < 6) {
       return res.status(400).json({
         success: false,
-        message:
-          "Password must be at least 8 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.",
+        message: "Password must be at least 6 characters long.",
       });
     }
 
