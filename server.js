@@ -47,6 +47,16 @@ if (process.env.NODE_ENV !== "production") {
   app.use(morgan("dev"));
 }
 
+// Database connection middleware for serverless
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (err) {
+    next(err);
+  }
+});
+
 // React Build (public folder)
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -75,7 +85,15 @@ app.get("/api", (req, res) => {
 
 // React Routes
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  const indexPath = path.join(__dirname, "public", "index.html");
+  res.sendFile(indexPath, (err) => {
+    if (err) {
+      res.status(200).json({
+        success: true,
+        message: "Vardaan E-commerce Backend API Running",
+      });
+    }
+  });
 });
 
 // Error Middleware
@@ -86,9 +104,8 @@ const DEFAULT_PORT = Number(process.env.PORT) || 5000;
 
 const startServer = async (port = DEFAULT_PORT, attempts = 0) => {
   try {
-    await connectDB().then(() => {
-      console.log("MongoDB Connected");
-    });
+    await connectDB();
+    console.log("MongoDB Connected");
     const server = app.listen(port, () => {
       console.log(
         `🚀 Server running in ${process.env.NODE_ENV || "development"} mode on port http://localhost:${port}`
@@ -101,7 +118,6 @@ const startServer = async (port = DEFAULT_PORT, attempts = 0) => {
         if (process.env.NODE_ENV !== 'production' && attempts < 5) {
           const nextPort = port + 1;
           console.log(`Attempting to start on port ${nextPort} instead...`);
-          // try next port
           startServer(nextPort, attempts + 1);
         } else {
           console.error('Unable to bind to a port. Exiting.');
@@ -118,8 +134,11 @@ const startServer = async (port = DEFAULT_PORT, attempts = 0) => {
   }
 };
 
-
+if (!process.env.VERCEL) {
   startServer();
+}
+
+export default app;
 
 
 
