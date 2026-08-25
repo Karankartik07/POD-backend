@@ -129,7 +129,7 @@ export const createShiprocketOrder = async (order, user) => {
     billing_pincode: pincode,
     billing_state: order.shippingAddress.state,
     billing_country: order.shippingAddress.country || 'India',
-    billing_email: user?.email || 'customer@vardaanecom.com',
+    billing_email: user?.email || 'customer@printmyway.com',
     billing_phone: phone,
     shipping_is_billing: true,
     order_items: orderItems,

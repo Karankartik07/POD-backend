@@ -13,7 +13,7 @@
 export const createDelhiveryOrder = async (order, user) => {
   const token = process.env.DELHIVERY_API_TOKEN;
   const clientName = process.env.DELHIVERY_CLIENT_NAME || 'UCP Business';
-  const resolvedPickupLocation = process.env.DELHIVERY_PICKUP_LOCATION || 'Vardaan Jewels';
+  const resolvedPickupLocation = process.env.DELHIVERY_PICKUP_LOCATION || 'Print My Way';
   const apiBaseUrl = process.env.DELHIVERY_API_URL || 'https://track.delhivery.com';
 
   if (!token) {

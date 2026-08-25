@@ -109,9 +109,8 @@ const DashboardHome = ({ token, onViewChange }) => {
           <div className="metric-info">
             <span className="metric-label">Total Revenue</span>
             <span className="metric-val">₹{stats.revenue.toLocaleString('en-IN')}</span>
-            {/* <span className="metric-change up">+12.4% vs last month</span> */}
           </div>
-          <div className="metric-icon purple">
+          <div className="metric-icon crimson">
             <IndianRupee size={24} />
           </div>
         </div>
@@ -120,9 +119,8 @@ const DashboardHome = ({ token, onViewChange }) => {
           <div className="metric-info">
             <span className="metric-label">Total Orders</span>
             <span className="metric-val">{stats.ordersCount}</span>
-            {/* <span className="metric-change up">+8.2% vs last month</span> */}
           </div>
-          <div className="metric-icon cyan">
+          <div className="metric-icon dark">
             <ShoppingBag size={24} />
           </div>
         </div>
@@ -144,7 +142,6 @@ const DashboardHome = ({ token, onViewChange }) => {
           <div className="metric-info">
             <span className="metric-label">Registered Customers</span>
             <span className="metric-val">{stats.customersCount}</span>
-            {/* <span className="metric-change up">+18% new users</span> */}
           </div>
           <div className="metric-icon green">
             <Users size={24} />
@@ -161,23 +158,23 @@ const DashboardHome = ({ token, onViewChange }) => {
               <AreaChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                 <defs>
                   <linearGradient id="colorSales" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="var(--primary)" stopOpacity={0.4}/>
+                    <stop offset="5%" stopColor="var(--primary)" stopOpacity={0.35}/>
                     <stop offset="95%" stopColor="var(--primary)" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                 <XAxis dataKey="date" stroke="var(--text-muted)" fontSize={11} />
                 <YAxis
-      width={70}
-      stroke="var(--text-muted)"
-      fontSize={11}
-      tickFormatter={(value) => `${value / 1000}k`}
-    />
-                <Tooltip 
-                  contentStyle={{ backgroundColor: '#0d1527', borderColor: 'var(--border-color)', color: 'var(--text-main)' }}
-                  formatter={(value) => [`₹${value}`, 'Revenue']}
+                  width={70}
+                  stroke="var(--text-muted)"
+                  fontSize={11}
+                  tickFormatter={(value) => `₹${value >= 1000 ? (value / 1000).toFixed(0) + 'k' : value}`}
                 />
-                <Area type="monotone" dataKey="Sales" stroke="var(--primary)" strokeWidth={2} fillOpacity={1} fill="url(#colorSales)" />
+                <Tooltip 
+                  contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', borderRadius: '8px', color: '#0f172a', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
+                  formatter={(value) => [`₹${value.toLocaleString('en-IN')}`, 'Revenue']}
+                />
+                <Area type="monotone" dataKey="Sales" stroke="var(--primary)" strokeWidth={2.5} fillOpacity={1} fill="url(#colorSales)" />
               </AreaChart>
             </ResponsiveContainer>
           </div>

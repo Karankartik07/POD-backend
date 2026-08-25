@@ -49,8 +49,8 @@ export const registerUser = async (req, res, next) => {
     const emailHtml = getWelcomeEmailTemplate(name, otp);
     await sendEmail({
       to: email,
-      subject: "Welcome to Vardaan - Verify Your Email Account",
-      text: `Welcome to Vardaan! Your verification OTP is: ${otp}. This code is valid for 24 hours.`,
+      subject: "Welcome to Print My Way - Verify Your Email Account",
+      text: `Welcome to Print My Way! Your verification OTP is: ${otp}. This code is valid for 24 hours.`,
       html: emailHtml,
     });
 
@@ -116,7 +116,7 @@ export const loginUser = async (req, res, next) => {
       const emailHtml = getWelcomeEmailTemplate(user.name || "User", otp);
       await sendEmail({
         to: user.email,
-        subject: "Verify Your Vardaan Account Email",
+        subject: "Verify Your Print My Way Account Email",
         text: `Please verify your email to continue. Your verification code is: ${otp}`,
         html: emailHtml,
       });
@@ -171,7 +171,7 @@ export const sendOTP = async (req, res, next) => {
     // Mock send OTP
     await sendEmail({
       to: email,
-      subject: "Your Vardaan Store OTP Verification Code",
+      subject: "Your Print My Way Store OTP Verification Code",
       text: `Your OTP for login is: ${otp}. It is valid for 10 minutes.`,
       html: `<h3>Your OTP for login is: <b>${otp}</b></h3><p>It is valid for 10 minutes.</p>`,
     });
@@ -266,7 +266,7 @@ export const forgotPassword = async (req, res, next) => {
     );
     await sendEmail({
       to: user.email,
-      subject: user.role === "admin" ? "Reset Your Vardaan Admin Password" : "Reset Your Vardaan Account Password",
+      subject: user.role === "admin" ? "Reset Your Print My Way Admin Password" : "Reset Your Print My Way Account Password",
       text: `Use this recovery code to reset your password: ${resetToken}`,
       html: emailHtml,
     });
@@ -483,8 +483,8 @@ export const resendVerificationOTP = async (req, res, next) => {
     const emailHtml = getWelcomeEmailTemplate(user.name || "Admin", otp);
     await sendEmail({
       to: user.email,
-      subject: "Verify Your Vardaan Admin Dashboard Access",
-      text: `Please verify your email to continue using the Vardaan admin dashboard. Your verification code is: ${otp}`,
+      subject: "Verify Your Print My Way Admin Dashboard Access",
+      text: `Please verify your email to continue using the Print My Way admin dashboard. Your verification code is: ${otp}`,
       html: emailHtml,
     });
 
@@ -523,7 +523,7 @@ export const loginMobile = async (req, res, next) => {
       // Create user profile for new guest login automatically
       user = await User.create({
         name: `User_${mobile.slice(-4)}`,
-        email: `${mobile}@vardaanecom.com`,
+        email: `${mobile}@printmyway.com`,
         password: Math.random().toString(36).slice(-8),
         mobile,
         mobileVerified: false,

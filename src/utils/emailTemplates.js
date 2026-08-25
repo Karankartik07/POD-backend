@@ -152,7 +152,7 @@ export const getInvoiceEmailTemplate = (order) => {
     <body>
       <div class="container">
         <div class="header">
-          <img src="https://res.cloudinary.com/dxlykgx6w/image/upload/v1783322584/Vardaan_jewel_logo-removebg-preview_q2mgqj.png" alt="VARDAAN" style="height:80px; object-fit:contain; display:block; margin:0 auto 8px;" />
+          <img src="https://res.cloudinary.com/usn1yap2/image/upload/v1787230546/pod_assets/logo.png" alt="PRINT MY WAY" style="height:60px; object-fit:contain; display:block; margin:0 auto 8px;" />
           <p>Payment Invoice & Receipt</p>
         </div>
         <div class="content">
@@ -160,7 +160,7 @@ export const getInvoiceEmailTemplate = (order) => {
           <p style="color: #555555; font-size: 15px; line-height: 1.7; margin: 0;">${welcomeMessage}</p>
           
           <table style="width: 100%; background: #F8F5EE; border: 1px solid #E5DCC5; border-radius: 6px; padding: 15px; margin: 20px 0; font-size: 14px; border-spacing: 0 6px;">
-            <tr><td style="color: #8C7547;"><strong>Seller:</strong></td><td style="text-align: right; font-weight: bold; color: #303030;">Vardaan Jewels</td></tr>
+            <tr><td style="color: #8C7547;"><strong>Seller:</strong></td><td style="text-align: right; font-weight: bold; color: #303030;">Print My Way</td></tr>
             <tr><td style="color: #8C7547;"><strong>GSTIN:</strong></td><td style="text-align: right; font-family: monospace; font-weight: bold; color: #303030;">09BDEPJ1387D1ZN</td></tr>
             <tr><td style="color: #8C7547;"><strong>Order Number:</strong></td><td style="text-align: right; font-weight: bold; color: #303030;">#${order._id}</td></tr>
             <tr><td style="color: #8C7547;"><strong>Payment Method:</strong></td><td style="text-align: right; color: #303030; text-transform: uppercase;">${order.paymentMethod}</td></tr>
@@ -197,11 +197,11 @@ export const getInvoiceEmailTemplate = (order) => {
 
           <p style="color: #555555; font-size: 15px; line-height: 1.7; margin-top: 30px;">Your items will be packaged and prepared for shipping shortly. We will update you with tracking details once dispatched.</p>
           <p style="color: #777777; font-size: 12px; line-height: 1.5; margin-top: 15px; border-top: 1px dashed #E5DCC5; padding-top: 10px;">* Note: All prices shown are inclusive of GST.</p>
-          <p style="color: #555555; font-size: 15px; line-height: 1.7; margin-top: 20px; font-style: italic;">Warmest regards,<br/><b>The Vardaan Team</b></p>
+          <p style="color: #555555; font-size: 15px; line-height: 1.7; margin-top: 20px; font-style: italic;">Warmest regards,<br/><b>The Print My Way Team</b></p>
         </div>
         <div class="footer">
-          <p>Vardaan Jewels</p>
-          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Vardaan E-commerce. All rights reserved.</p>
+          <p>Print My Way</p>
+          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Print My Way. All rights reserved.</p>
         </div>
       </div>
     </body>
@@ -236,7 +236,7 @@ export const getStatusUpdateEmailTemplate = (order, title, message) => {
     <body>
       <div class="container">
         <div class="header">
-          <img src="https://res.cloudinary.com/dxlykgx6w/image/upload/v1783322584/Vardaan_jewel_logo-removebg-preview_q2mgqj.png" alt="VARDAAN" style="height:80px; object-fit:contain; display:block; margin:0 auto 8px;" />
+          <img src="https://res.cloudinary.com/usn1yap2/image/upload/v1787230546/pod_assets/logo.png" alt="PRINT MY WAY" style="height:60px; object-fit:contain; display:block; margin:0 auto 8px;" />
           <p>Order Status Update</p>
         </div>
         <div class="content">
@@ -265,8 +265,8 @@ export const getStatusUpdateEmailTemplate = (order, title, message) => {
           <p style="font-size: 14px; color: #8C7547; line-height: 1.6; margin: 20px 0 0 0;">You can check the dispatch details and track the shipment status anytime by logging into your Customer Dashboard.</p>
         </div>
         <div class="footer">
-          <p>Vardaan Jewels</p>
-          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Vardaan E-commerce. All rights reserved.</p>
+          <p>Print My Way</p>
+          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Print My Way. All rights reserved.</p>
         </div>
       </div>
     </body>
@@ -280,7 +280,7 @@ export const getWelcomeEmailTemplate = (name, otp) => {
     <html>
     <head>
       <meta charset="utf-8">
-      <title>Welcome to Vardaan - Verification Code</title>
+      <title>Welcome to Print My Way - Verification Code</title>
       <style>
         body { font-family: 'Garamond', 'Georgia', 'Times New Roman', serif; background-color: #FAF9F6; margin: 0; padding: 20px; }
         .container { max-width: 580px; background: #ffffff; border: 1px solid #E5DCC5; border-radius: 8px; margin: 0 auto; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.03); }
@@ -304,11 +304,11 @@ export const getWelcomeEmailTemplate = (name, otp) => {
     <body>
       <div class="container">
         <div class="header">
-          <img src="https://res.cloudinary.com/dxlykgx6w/image/upload/v1783322584/Vardaan_jewel_logo-removebg-preview_q2mgqj.png" alt="VARDAAN" style="height:80px; object-fit:contain; display:block; margin:0 auto 8px;" />
+          <img src="https://res.cloudinary.com/usn1yap2/image/upload/v1787230546/pod_assets/logo.png" alt="PRINT MY WAY" style="height:60px; object-fit:contain; display:block; margin:0 auto 8px;" />
         </div>
         <div class="content">
           <p class="greeting">Dear ${name},</p>
-          <p class="lead-text">Thank you for choosing Vardaan. We are delighted to welcome you to our family of fine jewelry connoisseurs. To secure your account and complete your verification, please use the verification code details below:</p>
+          <p class="lead-text">Thank you for choosing Print My Way. We are delighted to welcome you to our family of fine jewelry connoisseurs. To secure your account and complete your verification, please use the verification code details below:</p>
           
           <div class="otp-box">
             <div class="otp-label">Your Verification Code</div>
@@ -324,11 +324,11 @@ export const getWelcomeEmailTemplate = (name, otp) => {
           </ul>
 
           <p class="lead-text" style="margin-top: 25px;">If you did not initiate this request, please contact our concierge team immediately.</p>
-          <p class="lead-text" style="margin-top: 30px; font-style: italic;">Warmest regards,<br/><b>The Vardaan Team</b></p>
+          <p class="lead-text" style="margin-top: 30px; font-style: italic;">Warmest regards,<br/><b>The Print My Way Team</b></p>
         </div>
         <div class="footer">
-          <p>Vardaan Jewels</p>
-          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Vardaan E-commerce. All rights reserved.</p>
+          <p>Print My Way</p>
+          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Print My Way. All rights reserved.</p>
         </div>
       </div>
     </body>
@@ -342,7 +342,7 @@ export const getForgotPasswordEmailTemplate = (name, otp) => {
     <html>
     <head>
       <meta charset="utf-8">
-      <title>Reset Your Vardaan Password</title>
+      <title>Reset Your Print My Way Password</title>
       <style>
         body { font-family: 'Garamond', 'Georgia', 'Times New Roman', serif; background-color: #FAF9F6; margin: 0; padding: 20px; }
         .container { max-width: 580px; background: #ffffff; border: 1px solid #E5DCC5; border-radius: 8px; margin: 0 auto; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.03); }
@@ -365,11 +365,11 @@ export const getForgotPasswordEmailTemplate = (name, otp) => {
     <body>
       <div class="container">
         <div class="header">
-          <img src="https://res.cloudinary.com/dxlykgx6w/image/upload/v1783322584/Vardaan_jewel_logo-removebg-preview_q2mgqj.png" alt="VARDAAN" style="height:80px; object-fit:contain; display:block; margin:0 auto 8px;" />
+          <img src="https://res.cloudinary.com/usn1yap2/image/upload/v1787230546/pod_assets/logo.png" alt="PRINT MY WAY" style="height:60px; object-fit:contain; display:block; margin:0 auto 8px;" />
         </div>
         <div class="content">
           <p class="greeting">Dear ${name},</p>
-          <p class="lead-text">We received a request to reset the password for your Vardaan account. To continue securely, please use the verification code below:</p>
+          <p class="lead-text">We received a request to reset the password for your Print My Way account. To continue securely, please use the verification code below:</p>
           
           <div class="otp-box">
             <div class="otp-label">Your Password Recovery Code</div>
@@ -380,11 +380,11 @@ export const getForgotPasswordEmailTemplate = (name, otp) => {
           <div class="note-box">
             If you did not request this change, you can safely ignore this email. Your password will remain unchanged and no other action is required.
           </div>
-          <p class="lead-text" style="margin-top: 30px; font-style: italic;">Warmest regards,<br/><b>The Vardaan Team</b></p>
+          <p class="lead-text" style="margin-top: 30px; font-style: italic;">Warmest regards,<br/><b>The Print My Way Team</b></p>
         </div>
         <div class="footer">
-          <p>Vardaan Jewels</p>
-          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Vardaan E-commerce. All rights reserved.</p>
+          <p>Print My Way</p>
+          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Print My Way. All rights reserved.</p>
         </div>
       </div>
     </body>
@@ -415,7 +415,7 @@ export const getOrderPlacedEmailTemplate = (order) => {
     <html>
     <head>
       <meta charset="utf-8">
-      <title>Your Vardaan Order Confirmation</title>
+      <title>Your Print My Way Order Confirmation</title>
       <style>
         body { font-family: 'Garamond', 'Georgia', 'Times New Roman', serif; background-color: #FAF9F6; margin: 0; padding: 20px; }
         .container { max-width: 580px; background: #ffffff; border: 1px solid #E5DCC5; border-radius: 8px; margin: 0 auto; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.03); }
@@ -447,14 +447,14 @@ export const getOrderPlacedEmailTemplate = (order) => {
     <body>
       <div class="container">
         <div class="header">
-          <img src="https://res.cloudinary.com/dxlykgx6w/image/upload/v1783322584/Vardaan_jewel_logo-removebg-preview_q2mgqj.png" alt="VARDAAN" style="height:80px; object-fit:contain; display:block; margin:0 auto 8px;" />
+          <img src="https://res.cloudinary.com/usn1yap2/image/upload/v1787230546/pod_assets/logo.png" alt="PRINT MY WAY" style="height:60px; object-fit:contain; display:block; margin:0 auto 8px;" />
         </div>
         <div class="content">
           <p class="greeting">Dear ${order.user?.name || "Valued Customer"},</p>
-          <p class="lead-text">Thank you for placing your order with Vardaan. We are delighted to assist you with your select jewelry collection. Here is a summary of your order details:</p>
+          <p class="lead-text">Thank you for placing your order with Print My Way. We are delighted to assist you with your select jewelry collection. Here is a summary of your order details:</p>
           
           <table style="width: 100%; background: #F8F5EE; border: 1px solid #E5DCC5; border-radius: 6px; padding: 15px; margin: 20px 0; font-size: 14px; border-spacing: 0 6px;">
-            <tr><td style="color: #8C7547;"><strong>Seller:</strong></td><td style="text-align: right; font-weight: bold; color: #303030;">Vardaan Jewels</td></tr>
+            <tr><td style="color: #8C7547;"><strong>Seller:</strong></td><td style="text-align: right; font-weight: bold; color: #303030;">Print My Way</td></tr>
             <tr><td style="color: #8C7547;"><strong>GSTIN:</strong></td><td style="text-align: right; font-family: monospace; font-weight: bold; color: #303030;">09BDEPJ1387D1ZN</td></tr>
             <tr><td style="color: #8C7547;"><strong>Order Number:</strong></td><td style="text-align: right; font-weight: bold; color: #303030;">#${order._id}</td></tr>
             <tr><td style="color: #8C7547;"><strong>Payment Mode:</strong></td><td style="text-align: right; color: #303030;">${order.paymentMethod}</td></tr>
@@ -490,11 +490,11 @@ export const getOrderPlacedEmailTemplate = (order) => {
 
           <p class="lead-text" style="margin-top: 30px;">We are currently verifying the order and preparing it for processing. You will receive another update as soon as your package is dispatched.</p>
           <p style="color: #777777; font-size: 12px; line-height: 1.5; margin-top: 15px; border-top: 1px dashed #E5DCC5; padding-top: 10px;">* Note: All prices shown are inclusive of GST.</p>
-          <p class="lead-text" style="margin-top: 20px; font-style: italic;">Warmest regards,<br/><b>The Vardaan Team</b></p>
+          <p class="lead-text" style="margin-top: 20px; font-style: italic;">Warmest regards,<br/><b>The Print My Way Team</b></p>
         </div>
         <div class="footer">
-          <p>Vardaan Jewels</p>
-          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Vardaan E-commerce. All rights reserved.</p>
+          <p>Print My Way</p>
+          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Print My Way. All rights reserved.</p>
         </div>
       </div>
     </body>
@@ -524,7 +524,7 @@ export const getReturnRequestedEmailTemplate = (
     <html>
     <head>
       <meta charset="utf-8">
-      <title>Vardaan Replacement Request Received</title>
+      <title>Print My Way Replacement Request Received</title>
       <style>
         body { font-family: 'Garamond', 'Georgia', 'Times New Roman', serif; background-color: #FAF9F6; margin: 0; padding: 20px; }
         .container { max-width: 580px; background: #ffffff; border: 1px solid #E5DCC5; border-radius: 8px; margin: 0 auto; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.03); }
@@ -549,7 +549,7 @@ export const getReturnRequestedEmailTemplate = (
     <body>
       <div class="container">
         <div class="header">
-          <img src="https://res.cloudinary.com/dxlykgx6w/image/upload/v1783322584/Vardaan_jewel_logo-removebg-preview_q2mgqj.png" alt="VARDAAN" style="height:80px; object-fit:contain; display:block; margin:0 auto 8px;" />
+          <img src="https://res.cloudinary.com/usn1yap2/image/upload/v1787230546/pod_assets/logo.png" alt="PRINT MY WAY" style="height:60px; object-fit:contain; display:block; margin:0 auto 8px;" />
           <p>Replacement Request Confirmation</p>
         </div>
         <div class="content">
@@ -577,11 +577,11 @@ export const getReturnRequestedEmailTemplate = (
           </table>
 
           <p class="lead-text" style="margin-top: 30px;">Our team typically reviews requests within 1–2 business days. You will receive an email update once the replacement is approved or updated.</p>
-          <p class="lead-text" style="margin-top: 30px; font-style: italic;">Warmest regards,<br/><b>The Vardaan Team</b></p>
+          <p class="lead-text" style="margin-top: 30px; font-style: italic;">Warmest regards,<br/><b>The Print My Way Team</b></p>
         </div>
         <div class="footer">
-          <p>Vardaan Jewels</p>
-          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Vardaan E-commerce. All rights reserved.</p>
+          <p>Print My Way</p>
+          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Print My Way. All rights reserved.</p>
         </div>
       </div>
     </body>
@@ -619,7 +619,7 @@ export const getReturnStatusUpdateEmailTemplate = (
     <html>
     <head>
       <meta charset="utf-8">
-      <title>Vardaan Replacement Request Update</title>
+      <title>Print My Way Replacement Request Update</title>
       <style>
         body { font-family: 'Garamond', 'Georgia', 'Times New Roman', serif; background-color: #FAF9F6; margin: 0; padding: 20px; }
         .container { max-width: 580px; background: #ffffff; border: 1px solid #E5DCC5; border-radius: 8px; margin: 0 auto; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.03); }
@@ -645,7 +645,7 @@ export const getReturnStatusUpdateEmailTemplate = (
     <body>
       <div class="container">
         <div class="header">
-          <img src="https://res.cloudinary.com/dxlykgx6w/image/upload/v1783322584/Vardaan_jewel_logo-removebg-preview_q2mgqj.png" alt="VARDAAN" style="height:80px; object-fit:contain; display:block; margin:0 auto 8px;" />
+          <img src="https://res.cloudinary.com/usn1yap2/image/upload/v1787230546/pod_assets/logo.png" alt="PRINT MY WAY" style="height:60px; object-fit:contain; display:block; margin:0 auto 8px;" />
           <p>Replacement Status Update</p>
         </div>
         <div class="content">
@@ -673,11 +673,11 @@ export const getReturnStatusUpdateEmailTemplate = (
           </table>
 
           <p class="lead-text" style="margin-top: 30px;">For any questions, feel free to contact our support desk.</p>
-          <p class="lead-text" style="margin-top: 30px; font-style: italic;">Warmest regards,<br/><b>The Vardaan Team</b></p>
+          <p class="lead-text" style="margin-top: 30px; font-style: italic;">Warmest regards,<br/><b>The Print My Way Team</b></p>
         </div>
         <div class="footer">
-          <p>Vardaan Jewels</p>
-          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Vardaan E-commerce. All rights reserved.</p>
+          <p>Print My Way</p>
+          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Print My Way. All rights reserved.</p>
         </div>
       </div>
     </body>
@@ -691,7 +691,7 @@ export const getContactThankYouEmailTemplate = (name, subject, message) => {
     <html>
     <head>
       <meta charset="utf-8">
-      <title>Thank You for Contacting Vardaan</title>
+      <title>Thank You for Contacting Print My Way</title>
       <style>
         body { font-family: 'Garamond', 'Georgia', 'Times New Roman', serif; background-color: #FAF9F6; margin: 0; padding: 20px; }
         .container { max-width: 580px; background: #ffffff; border: 1px solid #E5DCC5; border-radius: 8px; margin: 0 auto; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.03); }
@@ -712,11 +712,11 @@ export const getContactThankYouEmailTemplate = (name, subject, message) => {
     <body>
       <div class="container">
         <div class="header">
-          <img src="https://res.cloudinary.com/dxlykgx6w/image/upload/v1783322584/Vardaan_jewel_logo-removebg-preview_q2mgqj.png" alt="VARDAAN" style="height:80px; object-fit:contain; display:block; margin:0 auto 8px;" />
+          <img src="https://res.cloudinary.com/usn1yap2/image/upload/v1787230546/pod_assets/logo.png" alt="PRINT MY WAY" style="height:60px; object-fit:contain; display:block; margin:0 auto 8px;" />
         </div>
         <div class="content">
           <p class="greeting">Dear ${name},</p>
-          <p class="lead-text">Thank you for reaching out to the Vardaan Concierge team. We have received your inquiry and our team is already reviewing it. A private consultant has been assigned to your request and will reply within 12 hours.</p>
+          <p class="lead-text">Thank you for reaching out to the Print My Way Support team. We have received your inquiry and our team is already reviewing it. A private consultant has been assigned to your request and will reply within 12 hours.</p>
           
           <div class="inquiry-summary">
             <div class="inquiry-title">Inquiry Details Received</div>
@@ -725,11 +725,11 @@ export const getContactThankYouEmailTemplate = (name, subject, message) => {
           </div>
  
           <p class="lead-text">We look forward to assisting you in finding or customizing your perfect jewelry creation.</p>
-          <p class="lead-text" style="margin-top: 30px; font-style: italic;">Warmest regards,<br/><b>The Vardaan Concierge Team</b></p>
+          <p class="lead-text" style="margin-top: 30px; font-style: italic;">Warmest regards,<br/><b>The Print My Way Team</b></p>
         </div>
         <div class="footer">
-          <p>Vardaan Jewels</p>
-          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Vardaan E-commerce. All rights reserved.</p>
+          <p>Print My Way</p>
+          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Print My Way. All rights reserved.</p>
         </div>
       </div>
     </body>
@@ -740,15 +740,15 @@ export const getContactThankYouEmailTemplate = (name, subject, message) => {
 export const getAccountStatusEmailTemplate = (name, isActive) => {
   const statusTitle = isActive ? "Account Activated" : "Account Suspended";
   const statusMessage = isActive
-    ? "We are pleased to inform you that your Vardaan account has been successfully activated. You can now log in, browse our fine jewelry collection, place orders, and manage your account details."
-    : "We regret to inform you that your Vardaan account has been temporarily suspended/deactivated. If you believe this is a misunderstanding or wish to appeal this decision, please contact our concierge support desk.";
+    ? "We are pleased to inform you that your Print My Way account has been successfully activated. You can now log in, browse our fine jewelry collection, place orders, and manage your account details."
+    : "We regret to inform you that your Print My Way account has been temporarily suspended/deactivated. If you believe this is a misunderstanding or wish to appeal this decision, please contact our concierge support desk.";
 
   return `
     <!DOCTYPE html>
     <html>
     <head>
       <meta charset="utf-8">
-      <title>Vardaan - ${statusTitle}</title>
+      <title>Print My Way - ${statusTitle}</title>
       <style>
         body { font-family: 'Garamond', 'Georgia', 'Times New Roman', serif; background-color: #FAF9F6; margin: 0; padding: 20px; }
         .container { max-width: 580px; background: #ffffff; border: 1px solid #E5DCC5; border-radius: 8px; margin: 0 auto; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.03); }
@@ -769,11 +769,11 @@ export const getAccountStatusEmailTemplate = (name, isActive) => {
     <body>
       <div class="container">
         <div class="header">
-          <img src="https://res.cloudinary.com/dxlykgx6w/image/upload/v1783322584/Vardaan_jewel_logo-removebg-preview_q2mgqj.png" alt="VARDAAN" style="height:80px; object-fit:contain; display:block; margin:0 auto 8px;" />
+          <img src="https://res.cloudinary.com/usn1yap2/image/upload/v1787230546/pod_assets/logo.png" alt="PRINT MY WAY" style="height:60px; object-fit:contain; display:block; margin:0 auto 8px;" />
         </div>
         <div class="content">
           <p class="greeting">Dear ${name},</p>
-          <p class="lead-text">There has been an update regarding your customer account status with Vardaan.</p>
+          <p class="lead-text">There has been an update regarding your customer account status with Print My Way.</p>
           
           <div class="status-box">
             <div class="status-label">Account Status Update</div>
@@ -792,11 +792,11 @@ export const getAccountStatusEmailTemplate = (name, isActive) => {
           `
           }
 
-          <p class="lead-text" style="margin-top: 30px; font-style: italic;">Warmest regards,<br/><b>The Vardaan Team</b></p>
+          <p class="lead-text" style="margin-top: 30px; font-style: italic;">Warmest regards,<br/><b>The Print My Way Team</b></p>
         </div>
         <div class="footer">
-          <p>Vardaan Jewels</p>
-          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Vardaan E-commerce. All rights reserved.</p>
+          <p>Print My Way</p>
+          <p style="margin-top: 6px;">&copy; ${new Date().getFullYear()} Print My Way. All rights reserved.</p>
         </div>
       </div>
     </body>

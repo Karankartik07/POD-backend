@@ -18,16 +18,26 @@ const Contacts = ({ token }) => {
     setPage(1);
   }, [searchTerm, selectedStatus]);
 
+  const getApiUrl = (endpoint) => {
+    if (typeof window !== 'undefined') {
+      const isDev = window.location.port === '5173' || window.location.port === '5174' || window.location.port === '3000';
+      if (isDev) {
+        return `http://localhost:5000${endpoint}`;
+      }
+    }
+    return endpoint;
+  };
+
   const fetchMessages = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(getApiUrl('/api/contact'), {
         headers: {
           'Authorization': `Bearer ${token}`
         }
       });
       const data = await res.json();
-      if (data.success) {
+      if (data.success && Array.isArray(data.data)) {
         setMessages(data.data);
       }
     } catch (err) {
@@ -46,7 +56,7 @@ const Contacts = ({ token }) => {
   const handleToggleResolve = async (id) => {
     setTogglingId(id);
     try {
-      const res = await fetch(`/api/contact/${id}`, {
+      const res = await fetch(getApiUrl(`/api/contact/${id}`), {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`

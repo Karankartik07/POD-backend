@@ -79,7 +79,7 @@ app.use("/api/hero-slides", heroSlideRoutes);
 app.get("/api", (req, res) => {
   res.status(200).json({
     success: true,
-    message: "Vardaan E-commerce Backend API Running",
+    message: "Print My Way E-commerce Backend API Running",
   });
 });
 
@@ -90,7 +90,7 @@ app.get("*", (req, res) => {
     if (err) {
       res.status(200).json({
         success: true,
-        message: "Vardaan E-commerce Backend API Running",
+        message: "Print My Way E-commerce Backend API Running",
       });
     }
   });

@@ -68,14 +68,14 @@ const Header = ({ currentTab, token }) => {
     switch (currentTab) {
       case 'dashboard': return { title: 'Dashboard Overview', subtitle: 'Overview of platform performance and operations' };
       case 'products': return { title: 'Products Management', subtitle: 'Manage listings, pricing, and dynamic specifications' };
-      case 'categories': return { title: 'Category Managment', subtitle: 'Organize items in infinite category hierarchies' };
-      case 'orders': return { title: 'Order History', subtitle: 'Process user payments, track dispatches, and print labels' };
-      case 'customers': return { title: 'Customer Data', subtitle: 'View customer directories and status authorizations' };
-      case 'inventory': return { title: 'Inventory Managment', subtitle: 'Audit inventory entries and restock store products' };
-      case 'coupons': return { title: 'Coupons Managment', subtitle: 'Audit Coupons entries and restock store products' };
-      case 'replace': return { title: 'Replacement Managment', subtitle: 'Audit replacement requests and restock store products' };
-      case 'contacts': return { title: 'Contacts Management', subtitle: 'Audit contact us entries and restock store products' };
-      case 'hero': return { title: 'HeroSlider Management', subtitle: 'Audit HeroSlider entries and restock store products' };
+      case 'categories': return { title: 'Category Management', subtitle: 'Organize items in category hierarchies' };
+      case 'orders': return { title: 'Order History', subtitle: 'Process user payments, track dispatches, and print shipping labels' };
+      case 'customers': return { title: 'Customer Directory', subtitle: 'View customer accounts and activity' };
+      case 'inventory': return { title: 'Inventory Management', subtitle: 'Audit stock entries and manage product inventory' };
+      case 'coupons': return { title: 'Coupons Management', subtitle: 'Create and manage store discount coupons' };
+      case 'replace': return { title: 'Replacement Management', subtitle: 'Manage product replacement requests' };
+      case 'contacts': return { title: 'Contact Inquiries', subtitle: 'View and respond to user messages and inquiries' };
+      case 'hero': return { title: 'Hero Banner Management', subtitle: 'Update homepage hero sliders and promotional banners' };
       default: return { title: 'Management Suite', subtitle: 'Admin settings panel' };
     }
   };
@@ -130,8 +130,8 @@ const Header = ({ currentTab, token }) => {
                     onClick={() => !n.isRead && handleMarkRead(n._id)}
                     style={{
                       display: 'flex', gap: '10px', padding: '10px', borderRadius: '8px',
-                      backgroundColor: n.isRead ? 'transparent' : 'rgba(99, 102, 241, 0.08)',
-                      cursor: n.isRead ? 'default' : 'pointer', border: '1px solid rgba(255,255,255,0.02)'
+                      backgroundColor: n.isRead ? 'transparent' : 'rgba(225, 29, 72, 0.06)',
+                      cursor: n.isRead ? 'default' : 'pointer', border: '1px solid var(--border-color)'
                     }}
                   >
                     <div style={{ alignSelf: 'flex-start', color: n.title.includes('Stock') ? 'var(--warning)' : 'var(--success)', marginTop: '2px' }}>
