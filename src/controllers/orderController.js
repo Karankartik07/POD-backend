@@ -230,8 +230,8 @@ export const checkoutOrder = async (req, res, next) => {
         const emailHtml = getOrderPlacedEmailTemplate(orderForEmail);
         await sendEmail({
           to: req.user.email,
-          subject: `Your Vardaan Order #${order._id} Has Been Placed!`,
-          text: `Dear ${req.user.name},\n\nThank you for shopping with us! Your order #${order._id} has been successfully placed. We will notify you once your order is confirmed.\n\nTotal Amount: ₹${order.totalAmount}\n\nWarm regards,\nThe Vardaan Team`,
+          subject: `Your Print My Way Order #${order._id} Has Been Placed!`,
+          text: `Dear ${req.user.name},\n\nThank you for shopping with us! Your order #${order._id} has been successfully placed. We will notify you once your order is confirmed.\n\nTotal Amount: ₹${order.totalAmount}\n\nWarm regards,\nThe Print My Way Team`,
           html: emailHtml
         });
       } catch (emailError) {
@@ -369,7 +369,7 @@ export const updateOrderStatus = async (req, res, next) => {
         await sendEmail({
           to: order.user.email,
           subject: orderStatus === 'confirmed'
-            ? `Invoice for Order #${order._id} - Vardaan Jewel`
+            ? `Invoice for Order #${order._id} - Print My Way`
             : `Order #${order._id} Status Update: ${orderStatus.toUpperCase()}`,
           text: `Hello ${order.user.name},\n\nYour order #${order._id} status is now: ${orderStatus}.\nUpdate Details: ${statusMessage}\n\nThank you for shopping with us!`,
           html: emailHtml
@@ -457,7 +457,7 @@ export const shipOrder = async (req, res, next) => {
     try {
       await sendEmail({
         to: order.user.email,
-        subject: `Order #${order._id} Dispatched! - Vardaan Jewel`,
+        subject: `Order #${order._id} Dispatched! - Print My Way`,
         text: `Good news! Your order #${order._id} has been dispatched.\nCarrier: ${finalCarrier}\nAWB / Tracking Number: ${awbNumber}\n\nYou can track the package status from your dashboard.`,
         html: getStatusUpdateEmailTemplate(order, 'Order Dispatched & Shipped', `Your package has been successfully picked up by ${finalCarrier} and is in transit.`)
       });
@@ -498,7 +498,7 @@ const handleStatusChangeEvents = async (order, oldStatus, newStatus) => {
     try {
       await sendEmail({
         to: order.user.email,
-        subject: `Order #${order._id} Dispatched! - Vardaan Jewel`,
+        subject: `Order #${order._id} Dispatched! - Print My Way`,
         text: `Good news! Your order #${order._id} has been dispatched.\nCarrier: ${carrier}\nAWB / Tracking Number: ${awb}\n\nYou can track the package status from your dashboard.`,
         html: getStatusUpdateEmailTemplate(order, 'Order Dispatched & Shipped', `Your package has been successfully picked up by ${carrier} and is in transit.`)
       });
@@ -534,7 +534,7 @@ const handleStatusChangeEvents = async (order, oldStatus, newStatus) => {
       const emailHtml = getStatusUpdateEmailTemplate(order, 'Order Cancelled', 'Your order has been cancelled/returned.');
       await sendEmail({
         to: order.user.email,
-        subject: `Order #${order._id} Cancelled - Vardaan Jewel`,
+        subject: `Order #${order._id} Cancelled - Print My Way`,
         text: `Hello ${order.user.name},\n\nYour order #${order._id} has been successfully cancelled.\n\nThank you for shopping with us!`,
         html: emailHtml
       });
@@ -757,7 +757,7 @@ export const delhiveryWebhook = async (req, res, next) => {
 
           await sendEmail({
             to: order.user.email,
-            subject: `Order #${order._id} is Out for Delivery! - Vardaan Jewel`,
+            subject: `Order #${order._id} is Out for Delivery! - Print My Way`,
             text: `Hello ${order.user.name},\n\nGreat news! Your order #${order._id} is out for delivery today and will reach you shortly.\n\nCarrier: ${order.tracking.carrier || 'Delhivery'}\nAWB: ${awb}`,
             html: getStatusUpdateEmailTemplate(order, 'Out for Delivery Today!', `Your package is out for delivery with our courier agent and will reach your shipping address today.`)
           });
@@ -842,7 +842,7 @@ export const cancelOrder = async (req, res, next) => {
       const emailHtml = getStatusUpdateEmailTemplate(order, 'Order Cancelled', 'Your order has been successfully cancelled by customer.');
       await sendEmail({
         to: order.user.email,
-        subject: `Order #${order._id} Cancelled - Vardaan Jewel`,
+        subject: `Order #${order._id} Cancelled - Print My Way`,
         text: `Hello ${order.user.name},\n\nYour order #${order._id} has been successfully cancelled.\n\nThank you for shopping with us!`,
         html: emailHtml
       });

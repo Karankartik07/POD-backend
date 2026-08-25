@@ -184,7 +184,13 @@ const Login = ({ onLoginSuccess }) => {
   return (
     <div className="login-wrapper">
       <div className="card login-card">
-        <div className="login-logo">Vardaan Jewel</div>
+        <div className="login-logo">
+          <img
+            src="https://res.cloudinary.com/usn1yap2/image/upload/v1787230546/pod_assets/logo.png"
+            alt="Print My Way"
+          />
+          <span style={{ fontSize: "13px", fontWeight: "600", color: "var(--text-muted)", letterSpacing: "1px", textTransform: "uppercase" }}>Admin Dashboard</span>
+        </div>
 
         {error && (
           <div

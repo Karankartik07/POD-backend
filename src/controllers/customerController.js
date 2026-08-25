@@ -38,8 +38,8 @@ export const toggleCustomerStatus = async (req, res, next) => {
       const actionName = customer.isActive ? 'Activated' : 'Suspended';
       await sendEmail({
         to: customer.email,
-        subject: `Your Vardaan Account Has Been ${actionName}`,
-        text: `Hello ${customer.name}, your Vardaan account status has been updated to: ${actionName}.`,
+        subject: `Your Print My Way Account Has Been ${actionName}`,
+        text: `Hello ${customer.name}, your Print My Way account status has been updated to: ${actionName}.`,
         html: emailHtml
       });
     } catch (mailError) {

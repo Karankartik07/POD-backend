@@ -107,7 +107,7 @@ export const requestReturn = async (req, res, next) => {
       const emailHtml = getReturnRequestedEmailTemplate(order, returnRequest, req.user.name);
       await sendEmail({
         to: req.user.email,
-        subject: `Vardaan - Replacement Request Received for Order #${order._id}`,
+        subject: `Print My Way - Replacement Request Received for Order #${order._id}`,
         html: emailHtml,
         text: `Hello ${req.user.name}, we have received your replacement request for Order #${order._id}. Status: PENDING.`
       });
@@ -207,7 +207,7 @@ export const updateReturnStatus = async (req, res, next) => {
       const emailHtml = getReturnStatusUpdateEmailTemplate(returnReq.order, returnReq, returnReq.user.name);
       await sendEmail({
         to: returnReq.user.email,
-        subject: `Vardaan - Replacement Request Status Update for Order #${returnReq.order._id}`,
+        subject: `Print My Way - Replacement Request Status Update for Order #${returnReq.order._id}`,
         html: emailHtml,
         text: `Hello ${returnReq.user.name}, the status of your replacement request for Order #${returnReq.order._id} has been updated to "${status}".`
       });
@@ -315,7 +315,7 @@ export const updateReturn = async (req, res, next) => {
       const emailHtml = getReturnRequestedEmailTemplate(order, returnRequest, req.user.name);
       await sendEmail({
         to: req.user.email,
-        subject: `Vardaan - Replacement Request Updated for Order #${order._id}`,
+        subject: `Print My Way - Replacement Request Updated for Order #${order._id}`,
         html: emailHtml,
         text: `Hello ${req.user.name}, your replacement request for Order #${order._id} has been updated.`
       });

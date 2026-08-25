@@ -19,8 +19,8 @@ export const createContactMessage = async (req, res, next) => {
     const emailHtml = getContactThankYouEmailTemplate(name, subject, message);
     await sendEmail({
       to: email,
-      subject: 'Thank you for contacting Vardaan Concierge',
-      text: `Hello ${name},\n\nThank you for reaching out to the Vardaan Concierge team. We have received your inquiry ("${subject}") and a consultant will get back to you shortly.\n\nBest regards,\nThe Vardaan Team`,
+      subject: 'Thank you for contacting Print My Way Support',
+      text: `Hello ${name},\n\nThank you for reaching out to the Print My Way team. We have received your inquiry ("${subject}") and a consultant will get back to you shortly.\n\nBest regards,\nThe Print My Way Team`,
       html: emailHtml
     });
 

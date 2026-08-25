@@ -8,7 +8,7 @@ export const sendEmail = async ({ to, subject, text, html, fromType }) => {
   let user = process.env.EMAIL_USER;
   let pass = process.env.EMAIL_PASS;
   let fromAddress = process.env.FROM_EMAIL || user;
-  let fromName = "Vardaan Jewels";
+  let fromName = "Print My Way";
 
   // Check if it's explicitly 'support' or contains support-related words in the content
   const isSupportType =
@@ -25,16 +25,16 @@ export const sendEmail = async ({ to, subject, text, html, fromType }) => {
         text?.toLowerCase().includes("support ticket")));
 
   if (isSupportType) {
-    user = process.env.SUPPORT_EMAIL_USER || "support@vardaanjewels.com";
+    user = process.env.SUPPORT_EMAIL_USER || "support@printmyway.com";
     pass = process.env.SUPPORT_EMAIL_PASS || "Shilpi.shivi02";
     fromAddress = user;
-    fromName = process.env.SUPPORT_EMAIL_FROM_NAME || "Vardaan Jewels Support";
+    fromName = process.env.SUPPORT_EMAIL_FROM_NAME || "Print My Way Support";
   } else {
     // Explicitly enforce system credentials if set, otherwise default to env fallback
-    user = process.env.SYSTEM_EMAIL_USER || user || "noreply@vardaanjewels.com";
+    user = process.env.SYSTEM_EMAIL_USER || user || "noreply@printmyway.com";
     pass = process.env.SYSTEM_EMAIL_PASS || pass || "Shilpi.shivi02";
     fromAddress = user;
-    fromName = process.env.SYSTEM_EMAIL_FROM_NAME || "Vardaan Jewels";
+    fromName = process.env.SYSTEM_EMAIL_FROM_NAME || "Print My Way";
   }
 
   const from = `"${fromName}" <${fromAddress}>`;

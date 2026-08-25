@@ -28,13 +28,13 @@ const Sidebar = ({ currentTab, onTabChange, adminUser, onLogout }) => {
 
   return (
     <div className="sidebar">
-      <div className="sidebar-logo ">
+      <div className="sidebar-logo">
         <img
-          src="https://res.cloudinary.com/dxlykgx6w/image/upload/v1783322584/Vardaan_jewel_logo-removebg-preview_q2mgqj.png"
-          alt="Vardaan Jewel"
+          src="https://res.cloudinary.com/usn1yap2/image/upload/v1787230546/pod_assets/logo.png"
+          alt="Print My Way"
           style={{
             width: "100%",
-            maxWidth: "180px",
+            maxWidth: "160px",
             height: "auto",
             objectFit: "contain",
             display: "block",
