@@ -66,6 +66,7 @@ export const registerUser = async (req, res, next) => {
 
     res.status(201).json({
       success: true,
+      message: "User registered successfully. Verification code sent to email.",
       data: {
         _id: user._id,
         name: user.name,
@@ -73,7 +74,6 @@ export const registerUser = async (req, res, next) => {
         mobile: user.mobile || "",
         avatar: user.avatar || "",
         role: user.role,
-        token: generateToken(user._id),
       },
     });
   } catch (error) {
@@ -432,7 +432,7 @@ export const verifyEmail = async (req, res, next) => {
 
     res.status(200).json({
       success: true,
-      message: "Email address verified successfully",
+      message: "Email address verified successfully. Please log in.",
       data: {
         _id: user._id,
         name: user.name,
@@ -440,7 +440,6 @@ export const verifyEmail = async (req, res, next) => {
         mobile: user.mobile || "",
         avatar: user.avatar || "",
         role: user.role,
-        token: generateToken(user._id),
       },
     });
   } catch (error) {
